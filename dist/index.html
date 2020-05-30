@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css">
+  <title>GOLD RUSH</title>
+</head>
+<div id="container">
+  <div id="board"></div>
+  <div id="scores"></div>
+  <div id="winner"></div>
+  <div id="form">
+    <input type="number" id="rows" value="10" placeholder="Rows">
+    <input type="number" id="columns" value="10" placeholder="Columns">
+    <button id='play'>Play</button>
+  </div>
+</div>
+
+<script id="board-template" type="text/x-handlebars-template">
+  {{#each matrix}}
+      <div class="row">
+          {{#each this}}
+              <span class="col {{this}}">{{this}}</span>
+          {{/each}}
+      </div>
+  {{/each}}
+</script>
+
+<script id="score-template" type="text/x-handlebars-template">
+
+  <p id='p1'>Player 1: {{player1}} <i class="far fa-smile"></i></p>
+  <p id='p2'>Player 2: {{player2}} <i class="fas fa-smile"></i></p>
+</script>
+
+<body>
+  <script src="jquery/dist/jquery.js"></script>
+  <script src="handlebars/dist/handlebars.js"></script>
+  <script src="./modules/Matrix.js"></script>
+  <script src="./modules/GoldRush.js"></script>
+  <script src="Renderer.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
